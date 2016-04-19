@@ -191,7 +191,7 @@ if(x+1>=x+1){
 
 Statement[
     Token(Type=Type.Num,name="x",value=5),
-    BasicStatement(left=(Token(name="x")),operator=Operator.Add,right=(Token(value=1),to=(Token(name="t2")))),
-    BasicStatement(left=(Token(value=1)),operator=Operator.Add,right=(Token(name="x"),to=(Token(name="t5")))),
-    If(expression=(left=Token(name="t2"),Comparator=Comparator.GE,right=Token("t5"),statements=[Statement()])
+    BasicStatement(left=Token(name="x"),operator=Operator.Add,right=Token(value=1),to=Token(name="t2")),
+    BasicStatement(left=Token(value=1),operator=Operator.Add,right=Token(name="x"),to=Token(name="t5")),
+    If(expression=(left=Token(name="t2"),Comparator=Comparator.GE,right=Token(name="t5"),statements=[Statement()])
 ]
