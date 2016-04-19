@@ -31,13 +31,10 @@ enum Comparator {
 class Token extends Statement{
     Type type
     String name
+    String value
 }
 enum Type{
     Num,Bool
-}
-class DefineStatement extends Statement{
-    Token token
-    String value
 }
 
 enum Operator{

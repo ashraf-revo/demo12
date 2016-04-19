@@ -185,17 +185,13 @@ if(x+1>=x+1){
 }
 
     mov x,5
-    move t,1
-    add x,t1,t2
-    move t3,1
-    add t4,x,t5
+    add x,1,t2
+    add 1,x,t5
     cmp t2 GE t5
 
 Statement[
-    DefineStatement(token=Token(Type=Type.Num,name="x"),value=5),
-    DefineStatement(token=Token(Type=Type.Num,name="t"),value=1),
-    BasicStatement(left=(Token(name="x")),operator=Operator.Add,right=(Token(name="t1"),to=(Token(name="t2")))),
-    DefineStatement(token=Token(Type=Type.Num,name="t3"),value=1),
-    BasicStatement(left=(Token(name="t4")),operator=Operator.Add,right=(Token(name="x"),to=(Token(name="t5")))),
-    If(expression=(Comparator=Comparator.GE),left=Token(name="t2"),right=Token("t5"),statements=[Statement()])
+    Token(Type=Type.Num,name="x",value=5),
+    BasicStatement(left=(Token(name="x")),operator=Operator.Add,right=(Token(value=1),to=(Token(name="t2")))),
+    BasicStatement(left=(Token(value=1)),operator=Operator.Add,right=(Token(name="x"),to=(Token(name="t5")))),
+    If(expression=(left=Token(name="t2"),Comparator=Comparator.GE,right=Token("t5"),statements=[Statement()])
 ]
