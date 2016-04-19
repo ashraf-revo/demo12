@@ -1,0 +1,201 @@
+int x;
+x=0;
+x=x*2;
+if(x==5){
+x/10;
+}
+
+while(x==10){
+
+}
+
+
+statement
+        X+-*/X
+Assignment
+        X=X
+Expression
+        X>,>=,<,<=,==X
+
+
+
+
+
+while(Expression),if(Expression)
+        Block
+
+
+Token
+    Left
+    Operator
+    Right
+
+    like
+        x=1
+        x>=2
+        x=1+2
+
+
+
+Expression  =
+        statement    +Comparator+    statement
+        x                >=          x-1
+        x+1              ==          x+1
+
+
+Num x;      move x,0
+    Changed to Statement
+    Left x
+    Operator =
+    Right 0
+
+Bool x;
+    Left x
+    Operator =
+    Right True
+
+
+
+    X+-*/X
+    x+x
+    x=x+1
+    move b,1
+    add x,b,x
+
+
+
+
+
+
+class IF extends Statement{
+    Expression expression
+    List<Statement> statements=[]
+}
+class While extends Statement{
+    Expression expression
+    List<Statement> statements=[]
+}
+class Expression{
+    Statement L
+    Comparator Comparator
+    Statement R
+}
+
+enum Comparator{
+    G,GE,L,LE,E,NE
+}
+
+class Token{
+    Type type
+    String name
+}
+enum Type{
+    Num,Bool
+}
+
+class Statement{
+
+}
+
+class DefineStatement extend Statement{
+    Token token
+    String value
+}
+
+
+
+enum Operator{
+    Plus,Minus,Mul,Div
+}
+
+
+Num x;               ||         Bool x;
+Num x=2;             ||         Bool x=True;
+Num x=w;             ||         Bool x=w;
+
+
+
+                   move x,False
+                   move t1,1
+                   move t2,1
+                   cmp 1 eq 1
+                        x=True
+                        jump L2
+                        x=False
+                        L2:
+
+                     ||         Bool x=1==1;
+                     ||         Bool x=1==w;
+                     ||         Bool x=w==1;
+                     ||         Bool x=w==w;
+
+
+
+
+
+
+Num x=1+1;           ||         Bool x=w+1==w;
+Num x=w+1;           ||         Bool x=w==w+1;
+Num x=1+w;           ||         Bool x=w+1==w+1;
+Num x=w+w;           ||
+
+
+
+class BasicStatement extend Statement{
+    Statement left
+    Operator operation
+    Statement left
+}
+
+
+
+
+   Token     =     Token
+ type+name
+
+
+
+
+
+Num x=w+2;
+x=x+2;
+Bool w=x+1>=x+1;
+w=x+1>=x+1;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{
+Num x=5;
+if(x+1>=x+1){
+    Bool r;
+    r=True;
+}
+}
+
+    mov x,5
+    move t,1
+    add x,t1,t2
+    move t3,1
+    add t4,x,t5
+    cmp t2 GE t5
+
+Statement[
+    DefineStatement(token=Token(Type=Type.Num,name="x"),value=5),
+    DefineStatement(token=Token(Type=Type.Num,name="t"),value=1),
+    BasicStatement(left=(Token(name="x")),operator=Operator.Add,right=(Token(name="t1"),to=(Token(name="t2")))),
+    DefineStatement(token=Token(Type=Type.Num,name="t3"),value=1),
+    BasicStatement(left=(Token(name="t4")),operator=Operator.Add,right=(Token(name="x"),to=(Token(name="t5")))),
+    If(expression=(Comparator=Comparator.GE),left=Token(name="t2"),right=Token("t5"),statements=[Statement()])
+]
